@@ -1,0 +1,15 @@
+#domains
+dom1={0, ..., $domSize}
+
+#predicates
+Friends(dom1, dom1)
+Smokes(dom1)
+Cancer(dom1)
+
+#formulas
+( !Smokes(x) |  Cancer(x)) ::$wt
+( Smokes(x) | !Friends(x, y) | !Smokes(y)) ::$wt
+( Smokes(y) | !Friends(x, y) | !Smokes(x)) ::$wt
+( Friends(x, y)) ::$wt
+( Smokes(x)) ::$wt
+( !Cancer(x)) ::$wt

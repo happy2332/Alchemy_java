@@ -1,0 +1,14 @@
+#domains
+dom1={1, ..., 20000}
+
+#predicates
+R(dom1)
+S(dom1)
+T(dom1)
+
+#formulas
+( R(x) | S(x)) ::3
+( S(x) | T(y) ) ::2
+( !R(x)) ::4
+( !S(x)) ::2
+( !T(y)) ::3

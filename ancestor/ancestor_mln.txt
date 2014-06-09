@@ -1,0 +1,22 @@
+#domains
+dom={0, ..., 9}
+
+#predicates
+Parent(dom,dom)
+Ancestor(dom,dom)
+Father(dom,dom)
+Mother(dom,dom)
+Son(dom,dom)
+Daughter(dom,dom)
+
+#formulas
+(!Parent(x,y) | Ancestor(x,y)) :: 5
+(!Ancestor(x,y) | !Ancestor(y,z) | Ancestor(x,z)) :: 8
+(!Parent(x,y) | Father(x,y) | Mother(x,y)) :: 2
+(!Parent(x,y) | Son(y,x) | Daughter(y,x)) :: 4
+(Parent(x,y)) :: 3
+(!Son(x,y))::6
+(!Daughter(x,y))::7
+(!Father(x,y))::1
+(!Mother(x,y))::8
+(!Ancestor(x,y))::4

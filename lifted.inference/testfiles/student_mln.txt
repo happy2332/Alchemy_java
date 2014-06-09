@@ -1,0 +1,13 @@
+#domains
+dom1={0, ..., 18}
+
+#predicates
+Takes(dom1, dom1)
+Teaches(dom1, dom1)
+JobOffered(dom1, dom1)
+
+#formulas
+( !Teaches(t, c) | !Takes(s, c) |  JobOffered(s, j)) ::0.8923367337678717
+( Teaches(t, c)) ::0.4486845008171447
+( Takes(s, c)) ::0.051848049144276875
+( !JobOffered(s, j)) ::0.9427008578431247

@@ -1,0 +1,16 @@
+#domains
+student={1, ..., 800}
+class={1, ..., 60}
+teacher={1, ..., 70}
+company={1, ..., 150}
+
+#predicates
+Takes(student, class)
+Teaches(teacher, class)
+JobOffered(student, company)
+
+#formulas
+( !Teaches(t, c) | !Takes(s, c) |  JobOffered(s, j)) ::0.97676
+( Teaches(t, c)) ::1.51785
+( Takes(s, c)) ::1.90967
+( !JobOffered(s, j)) ::0.03445

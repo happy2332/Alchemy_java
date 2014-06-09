@@ -1,0 +1,13 @@
+#domains
+dom1={0, ..., 124}
+
+#predicates
+Takes(dom1, dom1)
+Teaches(dom1, dom1)
+JobOffered(dom1, dom1)
+
+#formulas
+( !Teaches(t, c) | !Takes(s, c) |  JobOffered(s, j)) ::3
+( Teaches(t, c)) ::1
+( Takes(s, c)) ::5
+( !JobOffered(s, j)) ::2

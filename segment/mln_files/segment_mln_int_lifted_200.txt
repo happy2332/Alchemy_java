@@ -1,0 +1,21 @@
+#domains
+citation={0, ..., 199}
+position={0, ..., 9}
+token={0, ..., 199}
+field={0, ..., 9}
+
+#predicates
+Token(token, position, citation)
+InField(position, field, citation)
+SameField(field, citation, citation)
+SameCitation(citation, citation)
+Equal(field, field)
+
+#formulas
+( !Token(t, i, c)   |  InField(i, f, c)) ::1
+( !InField(i, f, c) |  InField(i, f, c)) ::3
+(  InField(i, f, c) | !InField(i, f, c)) ::2
+(  Equal(f1, f2)    | !InField(i, f1, c) | !InField(i, f2, c)) ::5
+(  Token(token, position, citation)) ::5
+( !InField(position, field, citation)) ::4
+( !Equal(field, field)) ::1

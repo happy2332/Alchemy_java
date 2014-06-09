@@ -1,0 +1,288 @@
+//predicate declarations
+hasPosition(person,position)
+samePhase(phase,phase)
+advisedBy(person,person)
+sameProject(project,project)
+professor(person)
+sameCourse(course,course)
+publication(title,person)
+yearsInProgram(person,integer)
+inPhase(person,phase)
+samePosition(position,position)
+samePerson(person,person)
+sameQuarter(quarter,quarter)
+ta(course,person,quarter)
+sameLevel(level,level)
+taughtBy(course,person,quarter)
+student(person)
+tempAdvisedBy(person,person)
+introCourse(course)
+projectMember(project,person)
+courseLevel(course,level)
+sameInteger(integer,integer)
+sameTitle(title,title)
+
+// 0.684932  !taughtBy(c,p,q) | !courseLevel(c,Level_500) | professor(p)
+0.684932  professor(a1) | !taughtBy(a2,a1,a3) | !courseLevel(a2,Level_500)
+
+// 0.67995  !taughtBy(c,p,q) | !student(p) | !courseLevel(c,Level_500)
+0.67995  !student(a1) | !taughtBy(a2,a1,a3) | !courseLevel(a2,Level_500)
+
+// -0.00863798  !taughtBy(c,p,q) | !student(p) | !inPhase(p,Pre_Quals)
+-0.00863798  !student(a1) | !taughtBy(a2,a1,a3) | !inPhase(a1,Pre_Quals)
+
+// 0       !taughtBy(c,p,q) | !student(p) | !yearsInProgram(p,Year_1)
+0       !student(a1) | !taughtBy(a2,a1,a3) | !yearsInProgram(a1,Year_1)
+
+// 0.066782  !tempAdvisedBy(s,p) | professor(p)
+0.066782  professor(a1) | !tempAdvisedBy(a2,a1)
+
+// 0.0116267  !tempAdvisedBy(s,p) | student(s)
+0.0116267  student(a1) | !tempAdvisedBy(a1,a2)
+
+// 0       !tempAdvisedBy(s,p) | hasPosition(p,Faculty)
+0       hasPosition(a1,Faculty) | !tempAdvisedBy(a2,a1)
+
+// 0       !tempAdvisedBy(s,p) | inPhase(s,Pre_Quals)
+0       inPhase(a1,Pre_Quals) | !tempAdvisedBy(a1,a2)
+
+// 1.33644  !taughtBy(c,p,q) | !courseLevel(c,Level_500) | !ta(c,s,q) | advisedBy(s,p) | tempAdvisedBy(s,p)
+1.33644  !taughtBy(a1,a2,a3) | !courseLevel(a1,Level_500) | advisedBy(a4,a2) | tempAdvisedBy(a4,a2) | !ta(a1,a4,a3)
+
+// 2.18957  !advisedBy(s,p) | student(s)
+2.18957  student(a1) | !advisedBy(a1,a2)
+
+// 2.39119  !advisedBy(s,p) | professor(p)
+2.39119  professor(a1) | !advisedBy(a2,a1)
+
+// 0.107125  !advisedBy(s,p) | !yearsInProgram(p,Year_1)
+0.107125  !advisedBy(a1,a2) | !yearsInProgram(a2,Year_1)
+
+// 0.128869  !publication(p,x) | !publication(p,y) | !student(x) | student(y) | professor(y)
+0.128869  professor(a1) | student(a1) | !student(a2) | !publication(a3,a1) | !publication(a3,a2)
+
+// 0.189668  !publication(p,x) | !publication(p,y) | !student(x) | student(y) | advisedBy(y,x) | tempAdvisedBy(x,y)
+0.189668  student(a1) | !student(a2) | !publication(a3,a1) | !publication(a3,a2) | advisedBy(a1,a2) | tempAdvisedBy(a2,a1)
+
+// 0.0727696  !professor(x) | !student(y)
+0.0727696  !professor(a1) | !student(a2)
+
+// -0.0510371  !student(x) | advisedBy(x,y) | tempAdvisedBy(x,y)
+-0.0510371  !student(a1) | advisedBy(a1,a2) | tempAdvisedBy(a1,a2)
+
+// -0.146815  !professor(p) | !hasPosition(p,Faculty) | taughtBy(c,p,q)
+-0.146815  !professor(a1) | taughtBy(a2,a1,a3) | !hasPosition(a1,Faculty)
+
+// 0       !inPhase(s,Post_Quals) | !yearsInProgram(s,Year_1)
+0       !inPhase(a1,Post_Quals) | !yearsInProgram(a1,Year_1)
+
+// 0       !inPhase(s,Post_Quals) | !inPhase(s,Post_Generals)
+0       !inPhase(a1,Post_Quals) | !inPhase(a1,Post_Generals)
+
+// 0       !inPhase(s,Post_Generals) | !inPhase(s,Pre_Quals)
+0       !inPhase(a1,Pre_Quals) | !inPhase(a1,Post_Generals)
+
+// 0.685356  !professor(p) | hasPosition(p,Faculty) | hasPosition(p,Faculty_affiliate) | hasPosition(p,Faculty_adjunct) | hasPosition(p,Faculty_emeritus) | hasPosition(p,Faculty_visiting)
+0.685356  !professor(a1) | hasPosition(a1,Faculty) | hasPosition(a1,Faculty_affiliate) | hasPosition(a1,Faculty_adjunct) | hasPosition(a1,Faculty_emeritus) | hasPosition(a1,Faculty_visiting)
+
+// 0       !hasPosition(p,Faculty_visiting) | !advisedBy(s,p)
+0       !hasPosition(a1,Faculty_visiting) | !advisedBy(a2,a1)
+
+// 1.86925  !professor(x) | !hasPosition(x,Faculty) | advisedBy(s,x) | tempAdvisedBy(s,x)
+1.86925  !professor(a1) | !hasPosition(a1,Faculty) | advisedBy(a2,a1) | tempAdvisedBy(a2,a1)
+
+// 0.00529491  !student(p) | yearsInProgram(p,Year_1) | ta(c,p,q)
+0.00529491  !student(a1) | yearsInProgram(a1,Year_1) | ta(a2,a1,a3)
+
+// 0       !tempAdvisedBy(x,y) | !hasPosition(x,Faculty_visiting)
+0       !hasPosition(a1,Faculty_visiting) | !tempAdvisedBy(a1,a2)
+
+// 0       !tempAdvisedBy(x,y) | yearsInProgram(x,Year_1) | yearsInProgram(x,Year_2)
+0       !tempAdvisedBy(a1,a2) | yearsInProgram(a1,Year_1) | yearsInProgram(a1,Year_2)
+
+// 0       !tempAdvisedBy(x,y) | inPhase(x,Pre_Quals)
+0       inPhase(a1,Pre_Quals) | !tempAdvisedBy(a1,a2)
+
+// 0.917666  !student(x) | inPhase(x,Pre_Quals) | inPhase(x,Post_Quals) | inPhase(x,Post_Generals)
+0.917666  !student(a1) | inPhase(a1,Pre_Quals) | inPhase(a1,Post_Quals) | inPhase(a1,Post_Generals)
+
+// 0       !inPhase(x,Pre_Quals) | !inPhase(x,Post_Quals)
+0       !inPhase(a1,Pre_Quals) | !inPhase(a1,Post_Quals)
+
+// 0       !hasPosition(x,y) | !hasPosition(x,z) | samePosition(y,z)
+0       !hasPosition(a1,a2) | !hasPosition(a1,a3) | samePosition(a2,a3)
+
+// 0.243729  !advisedBy(a,a)
+0.243729  !advisedBy(a1,a1)
+
+// 0       !tempAdvisedBy(a,a)
+0       !tempAdvisedBy(a1,a1)
+
+// 0.287982  !advisedBy(a,b) | !advisedBy(b,a)
+0.287982  !advisedBy(a1,a2) | !advisedBy(a2,a1)
+
+// 0       !tempAdvisedBy(a,b) | !tempAdvisedBy(b,a)
+0       !tempAdvisedBy(a1,a2) | !tempAdvisedBy(a2,a1)
+
+// 0.864855  !advisedBy(s,p) | samePerson(p,q) | !advisedBy(s,q)
+0.864855  !advisedBy(a1,a2) | !advisedBy(a1,a3) | samePerson(a2,a3)
+
+// 0       !tempAdvisedBy(s,p) | samePerson(p,q) | !tempAdvisedBy(s,q)
+0       !tempAdvisedBy(a1,a2) | !tempAdvisedBy(a1,a3) | samePerson(a2,a3)
+
+// 0.988347  !tempAdvisedBy(s,p) | !advisedBy(s,q)
+0.988347  !advisedBy(a1,a2) | !tempAdvisedBy(a1,a3)
+
+// -1.37113  !inPhase(s,Pre_Quals) | !advisedBy(s,p)
+-1.37113  !advisedBy(a1,a2) | !inPhase(a1,Pre_Quals)
+
+// 0       !inPhase(s,Post_Quals) | !tempAdvisedBy(s,p)
+0       !inPhase(a1,Post_Quals) | !tempAdvisedBy(a1,a2)
+
+// 0       !inPhase(s,Post_Generals) | !tempAdvisedBy(s,p)
+0       !inPhase(a1,Post_Generals) | !tempAdvisedBy(a1,a2)
+
+// 3.52552e-06  !inPhase(s,Post_Quals) | !taughtBy(c,p,q) | !ta(c,s,q) | courseLevel(c,Level_100) | advisedBy(s,p)
+3.52552e-06  !taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | advisedBy(a4,a2) | !inPhase(a4,Post_Quals) | !ta(a1,a4,a3)
+
+// -1.36245  !inPhase(s,Post_Quals) | !taughtBy(c,p,q) | ta(c,s,q) | courseLevel(c,Level_100) | !advisedBy(s,p)
+-1.36245  !taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | !advisedBy(a4,a2) | !inPhase(a4,Post_Quals) | ta(a1,a4,a3)
+
+// 1.12566  !inPhase(s,Post_Quals) | taughtBy(c,p,q) | !ta(c,s,q) | courseLevel(c,Level_100) | !advisedBy(s,p)
+1.12566  taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | !advisedBy(a4,a2) | !inPhase(a4,Post_Quals) | !ta(a1,a4,a3)
+
+// -0.0723343  !inPhase(s,Post_Generals) | !taughtBy(c,p,q) | !ta(c,s,q) | courseLevel(c,Level_100) | advisedBy(s,p)
+-0.0723343  !taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | advisedBy(a4,a2) | !inPhase(a4,Post_Generals) | !ta(a1,a4,a3)
+
+// -0.250198  !inPhase(s,Post_Generals) | !taughtBy(c,p,q) | ta(c,s,q) | courseLevel(c,Level_100) | !advisedBy(s,p)
+-0.250198  !taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | !advisedBy(a4,a2) | !inPhase(a4,Post_Generals) | ta(a1,a4,a3)
+
+// 0.0965917  !inPhase(s,Post_Generals) | taughtBy(c,p,q) | !ta(c,s,q) | courseLevel(c,Level_100) | !advisedBy(s,p)
+0.0965917  taughtBy(a1,a2,a3) | courseLevel(a1,Level_100) | !advisedBy(a4,a2) | !inPhase(a4,Post_Generals) | !ta(a1,a4,a3)
+
+// -0.131205  !publication(t,a) | !publication(t,b) | samePerson(a,b) | advisedBy(a,b) | advisedBy(b,a)
+-0.131205  !publication(a1,a2) | !publication(a1,a3) | advisedBy(a2,a3) | advisedBy(a3,a2) | samePerson(a2,a3)
+
+// 0.290105  !publication(t,a) | !publication(t,b) | samePerson(a,b) | !professor(a) | !student(b) | advisedBy(b,a)
+0.290105  !professor(a1) | !student(a2) | !publication(a3,a1) | !publication(a3,a2) | advisedBy(a2,a1) | samePerson(a1,a2)
+
+// -0.0931581  !advisedBy(s,p) | !publication(t,s) | publication(t,p)
+-0.0931581  publication(a1,a2) | !publication(a1,a3) | !advisedBy(a3,a2)
+
+// 1.72787  !taughtBy(c,p,q) | professor(p)
+1.72787  professor(a1) | !taughtBy(a2,a1,a3)
+
+// 0.233321  !hasPosition(p,x) | professor(p)
+0.233321  professor(a1) | !hasPosition(a1,a2)
+
+// 0.497332  !advisedBy(p,s) | student(s)
+0.497332  student(a1) | !advisedBy(a2,a1)
+
+// 0.80428  !advisedBy(p,s) | professor(p)
+0.80428  professor(a1) | !advisedBy(a1,a2)
+
+// 0.787135  !inPhase(p,x) | student(p)
+0.787135  student(a1) | !inPhase(a1,a2)
+
+// -3.36376e-07  !tempAdvisedBy(p,s) | student(s)
+-3.36376e-07  student(a1) | !tempAdvisedBy(a2,a1)
+
+// -0.0422401  !tempAdvisedBy(p,s) | professor(p)
+-0.0422401  professor(a1) | !tempAdvisedBy(a1,a2)
+
+// 0.787135  !yearsInProgram(p,x) | student(p)
+0.787135  student(a1) | !yearsInProgram(a1,a2)
+
+// 2.10468  !ta(c,p,q) | student(p)
+2.10468  student(a1) | !ta(a2,a1,a3)
+
+// 2.03923  student(p) | professor(p)
+2.03923  professor(a1) | student(a1)
+
+// 2.47788  !student(p) | !professor(p)
+2.47788  !professor(a1) | !student(a1)
+
+// 0       !inPhase(p,x) | samePhase(x,y) | !inPhase(p,y)
+0       !inPhase(a1,a2) | !inPhase(a1,a3) | samePhase(a2,a3)
+
+// 0       !yearsInProgram(p,x) | sameInteger(x,y) | !yearsInProgram(p,y)
+0       !yearsInProgram(a1,a2) | !yearsInProgram(a1,a3) | sameInteger(a2,a3)
+
+// 0       !taughtBy(x,p,q) | sameCourse(x,y) | !taughtBy(y,p,q)
+0       !taughtBy(a1,a2,a3) | !taughtBy(a4,a2,a3) | sameCourse(a1,a4)
+
+// 0       !taughtBy(c,x,q) | samePerson(x,y) | !taughtBy(c,y,q)
+0       !taughtBy(a1,a2,a3) | !taughtBy(a1,a4,a3) | samePerson(a2,a4)
+
+// 0       !ta(x,p,q) | sameCourse(x,y) | !ta(y,p,q)
+0       !ta(a1,a2,a3) | !ta(a4,a2,a3) | sameCourse(a1,a4)
+
+// 0       !ta(c,x,q) | samePerson(x,y) | !ta(c,y,q)
+0       !ta(a1,a2,a3) | !ta(a1,a4,a3) | samePerson(a2,a4)
+
+// -0.384754  professor(x)
+-0.384754  professor(a1)
+
+// -0.234611  student(x)
+-0.234611  student(a1)
+
+// 0       publication(y,z)
+0       publication(a1,a2)
+
+// 0       taughtBy(x,y,z)
+0       taughtBy(a1,a2,a3)
+
+// 0       courseLevel(z,y)
+0       courseLevel(a1,a2)
+
+// 0       introCourse(x)
+0       introCourse(a1)
+
+// 0       hasPosition(x,y)
+0       hasPosition(a1,a2)
+
+// 0       projectMember(x,y)
+0       projectMember(a1,a2)
+
+// -3.28825  advisedBy(x,y)
+-3.28825  advisedBy(a1,a2)
+
+// 0       inPhase(x,y)
+0       inPhase(a1,a2)
+
+// 0       tempAdvisedBy(x,y)
+0       tempAdvisedBy(a1,a2)
+
+// 0       yearsInProgram(x,y)
+0       yearsInProgram(a1,a2)
+
+// 0       ta(x,y,z)
+0       ta(a1,a2,a3)
+
+// 0       samePerson(x,y)
+0       samePerson(a1,a2)
+
+// 0       sameTitle(x,y)
+0       sameTitle(a1,a2)
+
+// 0       sameCourse(x,y)
+0       sameCourse(a1,a2)
+
+// 0       sameProject(x,y)
+0       sameProject(a1,a2)
+
+// 0       sameQuarter(x,y)
+0       sameQuarter(a1,a2)
+
+// 0       sameLevel(x,y)
+0       sameLevel(a1,a2)
+
+// 0       samePosition(x,y)
+0       samePosition(a1,a2)
+
+// 0       samePhase(x,y)
+0       samePhase(a1,a2)
+
+// 0       sameInteger(x,y)
+0       sameInteger(a1,a2)
+

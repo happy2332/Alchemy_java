@@ -1,0 +1,8 @@
+#domains
+dom1={0, ..., 249}
+
+#predicates
+R(dom1, dom1)
+
+#formulas
+( !R(x,y) |  R(y,x)) ::1.01

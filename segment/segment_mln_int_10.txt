@@ -1,0 +1,28 @@
+#domains
+citation={0, ..., 10}
+position={0, ..., 10}
+token={0, ..., 10}
+field={0, ..., 10}
+
+#predicates
+Token(token, position, citation)
+InField(position, field, citation)
+SameField(field, citation, citation)
+SameCitation(citation, citation)
+Equal(field, field)
+
+#formulas
+( !Token(t, i, c)   |  InField(i, f, c)) ::1
+( !InField(i, f, c) |  InField(i, f, c)) ::2
+(  InField(i, f, c) | !InField(i, f, c)) ::2
+(  Equal(f1, f2)    | !InField(i, f1, c) | !InField(i, f2, c)) ::5
+( !Token(t, i, c)   | !InField(i, f, c)  | !Token(t, i1, c1) | !InField(i1, f, c1) | SameField(f, c, c1)) ::3
+( !SameField(f, c1, c2) |  SameCitation(c1, c2)) ::3
+(  SameField(f, c1, c2) | !SameCitation(c1, c2)) ::3
+( !SameField(f, c1, c2) | !SameField(f, c2, c3) | SameField(f, c1, c3)) ::1
+( !SameCitation(c1, c2) | !SameCitation(c2, c3) | SameCitation(c1, c3)) ::5
+(  Token(token, position, citation)) ::5
+( !InField(position, field, citation)) ::4
+(  SameField(field, citation, citation)) ::5
+(  SameCitation(citation, citation)) ::4
+( !Equal(field, field)) ::1

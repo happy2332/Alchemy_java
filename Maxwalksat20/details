@@ -1,0 +1,34 @@
+core 10 : student_aistats_29
+core 11 : student_aistats_99
+core 12 : student_aistats_499
+core 13 : student_ground_29
+core 14 : smoke_29
+core 15 : smoke_49, smoke_99
+core 16 : smoke_aistats_29
+core 17 : smoke_aistats_49
+core 18 : smoke_aistats_99
+core 19 : segment_29
+core 20 : segment_99
+core 21 : segment_499
+core 22 : segment_aistats_29
+core 23 : segment_aistats_99
+core 24 : segment_aistats_499
+core 25 : segment_ground_29
+
+30/05/2014
+core 10 : student_aistats_29
+core 11 : student_aistats_99
+core 12 : student_aistats_499 -> seg fault
+core 13 : student_ground_29
+core 14 : smoke_aistats_29
+core 15 : smoke_aistats_49
+core 16 : smoke_aistats_99
+core 17 : segment_aistats_9
+core 18 : segment_aistats_29
+core 19 : segment_aistats_99
+core 20 : segment_aistats_499
+core 21 : segment_ground_9
+core 22 : segment_ground_29
+
+
+

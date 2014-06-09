@@ -1,0 +1,64 @@
+#domains
+dom1={0, ..., 5}
+dom2={0, ..., 10}
+
+#predicates
+Has(dom1, dom2)
+Linked(dom1, dom1)
+PageClass0(dom1)
+PageClass1(dom1)
+PageClass2(dom1)
+PageClass3(dom1)
+PageClass4(dom1)
+PageClass5(dom1)
+
+#formulas
+( PageClass0(p)) ::1.90426
+( PageClass1(p)) ::1.19667
+( PageClass2(p)) ::1.01047
+( PageClass3(p)) ::0.35211
+( PageClass4(p)) ::1.7606
+( PageClass5(p)) ::0.84705
+( !Has(p,w) | PageClass0(p)) ::1.65397
+( !Has(p,w) | PageClass1(p)) ::1.30215
+( !Has(p,w) | PageClass2(p)) ::0.58039
+( !Has(p,w) | PageClass3(p)) ::1.86633
+( !Has(p,w) | PageClass4(p)) ::0.49125
+( !Has(p,w) | PageClass5(p)) ::1.73653
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.38074
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::0.05636
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::0.07652
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::1.84956
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::0.37619
+( !PageClass0(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::1.64256
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.12542
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::1.31102
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::0.61188
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::0.66116
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::1.50087
+( !PageClass1(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::1.44697
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.97246
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::1.45485
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::0.90289
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::0.38885
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::1.18653
+( !PageClass2(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::1.40103
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.59802
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::1.97601
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::1.08134
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::1.64751
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::0.81529
+( !PageClass3(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::1.754
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.78981
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::0.5931
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::0.5388
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::1.2797
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::1.87147
+( !PageClass4(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::0.12626
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass0(p2)) ::1.34352
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass1(p2)) ::1.12626
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass2(p2)) ::0.38141
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass3(p2)) ::0.22264
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass4(p2)) ::0.64875
+( !PageClass5(p1)) | !Linked(p1,p2) | PageClass5(p2)) ::1.4749
+( !Linked(p1,p2) |  Linked(p2,p1)) ::180.59373

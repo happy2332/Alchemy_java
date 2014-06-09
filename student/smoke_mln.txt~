@@ -1,0 +1,13 @@
+#domains
+dom1={0, ..., 1}
+
+#predicates
+S(dom1)
+F(dom1,dom1)
+
+#formulas
+(S(x)) :: 100
+(F(x,y)) :: 200
+( !S(x) | F(x,y)) :: 5
+( !K(x,y) | !K(y,z) | K(x,z)) :: 2
+( !S(x) | F(y,t)) :: 10

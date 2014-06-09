@@ -1,0 +1,15 @@
+#domains
+dom1={0, ..., 30}
+
+#predicates
+Has(dom1, dom1)
+Linked(dom1, dom1)
+PageClass(dom1, dom1)
+
+#formulas
+( Has(p, w)) ::3
+( Linked(p1, p2)) ::1
+( !PageClass(p, c)) ::4
+( !Has(p,w) | PageClass(p, c)) ::3
+( !PageClass(p1, c1)) | !Linked(p1,p2) | PageClass(p2, c2)) ::3
+( !Linked(p1,p2) |  Linked(p2,p1)) ::5
