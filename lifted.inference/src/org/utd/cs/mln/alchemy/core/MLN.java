@@ -255,4 +255,183 @@ public class MLN {
 		max_predicate_id = (0);
 		maxDegree = (-1);
 	}
-}
+
+	
+	public void convertToNormalForm(MLN mln, ArrayList<Evidence> evid_list) {
+		ArrayList<Integer> predIndices = new ArrayList<Integer>();
+		for(PredicateSymbol symbol : mln.symbols){
+			predIndices.add(0);
+		}
+		
+		ArrayList<Atom> atoms_created = new ArrayList<Atom>();
+		for(Evidence evidence : evid_list){
+			ArrayList<WClause> allNewClauses = new ArrayList<WClause>();
+			int sizeOrig = mln.clauses.size();
+			for(int i = 0 ; i < sizeOrig ; i++)
+			{
+				WClause clause = mln.clauses.get(i);
+				ArrayList<Integer> atomIndices = new ArrayList<Integer>();
+				for(Atom atom : clause.atoms){
+					if(atom.symbol.parentId == evidence.symbol.parentId){
+						boolean toSplit = true;
+						for(int j = 0 ; j < evidence.values.size() ; j++){
+							if(!atom.terms.get(j).domain.contains(evidence.values.get(j))){
+								toSplit = false;
+							}
+						}
+						if(toSplit){
+							atomIndices.add(clause.atoms.indexOf(atom));
+						}
+					}
+				}
+				//System.out.println("atomIndices : "+atomIndices);
+				ArrayList<WClause> newClauses = new ArrayList<WClause>();
+				newClauses.add(clause);
+				applyEvidence(atomIndices, evidence, predIndices, atoms_created, newClauses);
+				allNewClauses.addAll(newClauses);
+			}
+			mln.clauses.clear();
+			mln.clauses.addAll(allNewClauses);
+		}
+		
+		print(mln.clauses, "new MLN printing...");
+	}
+
+	private ArrayList<WClause> splitClauseAtTerm(WClause clause, int atomIndex, int termIndex, Evidence evidence){
+		if(termIndex == clause.atoms.get(atomIndex).terms.size()){
+			ArrayList<WClause>splittedClauses = new ArrayList<WClause>();
+			splittedClauses.add(clause);
+			return splittedClauses;
+		}
+		if(clause.atoms.get(atomIndex).terms.get(termIndex).domain.size() == 1){
+			return splitClauseAtTerm(clause, atomIndex, termIndex+1, evidence);
+		}
+		WClause clause1 = create_new_clause(clause);
+		WClause clause2 = create_new_clause(clause);
+		List<Term> evidTerms = clause.atoms.get(atomIndex).terms;
+		for(int i = 0 ; i < clause.atoms.size() ; i++){
+			Atom atom = clause.atoms.get(i);
+			//boolean changed = false;
+			for(int  j = 0 ; j < atom.terms.size() ; j++){
+				if(atom.terms.get(j).equals(evidTerms.get(termIndex))){
+						Atom atom1 = clause1.atoms.get(i);
+						atom1.terms.get(j).domain.clear();
+						atom1.terms.get(j).domain.add(evidence.values.get(termIndex));
+						/*
+						if(changed == false){
+							if(already_created(atoms_created, atom1.symbol.parentId, atom1.terms.get(j).domain))
+							atom1.symbol.symbol +=  "_" + predIndices.get(atom1.symbol.id);
+							predIndices.set(atom1.symbol.id, predIndices.get(atom1.symbol.id)+1);
+						}
+						*/
+						
+						Atom atom2 = clause2.atoms.get(i);
+						atom2.terms.get(j).domain.remove(evidence.values.get(termIndex));
+						/*
+						if(changed == false){
+							atom2.symbol.symbol +=  "_" + predIndices.get(atom2.symbol.id);
+							predIndices.set(atom2.symbol.id, predIndices.get(atom2.symbol.id)+1);
+						}
+						*/
+						
+						//changed = true;
+					}
+				}
+			}
+		 ArrayList<WClause> splittedClauses = splitClauseAtTerm(clause1, atomIndex, termIndex+1, evidence);
+		 splittedClauses.add(clause2);
+		 return splittedClauses;
+	}
+	private void applyEvidence(ArrayList<Integer> atomIndices, Evidence evidence, ArrayList<Integer> predIndices, ArrayList<Atom> atoms_created,
+			ArrayList<WClause> newClauses) {
+		for(Integer i : atomIndices){
+			ArrayList<WClause> splittedClauses = new ArrayList<WClause>();
+			for(WClause clause : newClauses){
+				//splitClause(clause,i,evidence,predIndices,atoms_created,splittedClauses);
+				splittedClauses.addAll(splitClauseAtTerm(clause, i, 0, evidence));
+			}
+			newClauses.clear();
+			newClauses.addAll(splittedClauses);	
+		}
+		ArrayList<WClause> finalClauses = new ArrayList<WClause>();
+		for(int i = 0 ; i < newClauses.size(); i++){
+			boolean clauseToAdd = true;
+			for(int j = newClauses.get(i).atoms.size() - 1 ; j >= 0 ; j--){
+				if(newClauses.get(i).atoms.get(j).symbol.parentId != evidence.symbol.parentId){
+					//finalClauses.add(newClauses.get(i)); //latest commented by happy : 03/09
+					continue;
+				}
+				List<Term> termList = newClauses.get(i).atoms.get(j).terms;
+				boolean evidenceFound = true;
+				for(Term term : termList){
+					if(term.domain.size() != 1){
+						evidenceFound = false; //latest change by Happy : 03/09
+						break;
+					}
+					if(term.domain.get(0) != evidence.values.get(termList.indexOf(term))){
+						evidenceFound = false;
+					}
+				}
+				if(evidenceFound){
+					if(evidence.truthValue == newClauses.get(i).sign.get(j)){
+						newClauses.get(i).removeAtom(j);
+					}
+					else{
+						clauseToAdd = false;
+						break; // added by happy 03/09 As soon as you find clause can't be added, break from atom loop
+					}
+				}
+			}
+			if(clauseToAdd){
+				finalClauses.add(newClauses.get(i));
+			}
+		}
+		newClauses.clear();
+		newClauses.addAll(finalClauses);
+	}
+	
+	/*
+
+	private void splitClause(WClause origClause, Integer evidIndex, Evidence evidence, ArrayList<Integer> predIndices,
+			ArrayList<Atom> atoms_created, ArrayList<WClause> newClauses) {
+		ArrayList<WClause> allSplittedClauses = new ArrayList<WClause>();
+		allSplittedClauses.add(origClause);
+		List<Term> evidTerms = origClause.atoms.get(evidIndex).terms;
+		ArrayList<WClause> splittedClauses = new ArrayList<WClause>(allSplittedClauses);
+		for(int t = 0 ; t < evidTerms.size() ; t++){
+			if(evidTerms.get(t).domain.size() == 1){
+				splittedClauses.addAll(allSplittedClauses);
+				continue;
+			}
+			splittedClauses.clear();
+			for(int c = 0 ; c < allSplittedClauses.size() ; c++){
+				WClause clause = allSplittedClauses.get(c);
+				WClause clause1 = create_new_clause(clause);
+				WClause clause2 = create_new_clause(clause);
+				splittedClauses.add(clause1);
+				splittedClauses.add(clause2);
+				for(int i = 0 ; i < clause.atoms.size() ; i++){
+					Atom atom = clause.atoms.get(i);
+					//boolean changed = false;
+					for(int  j = 0 ; j < atom.terms.size() ; j++){
+						if(atom.terms.get(j).equals(evidTerms.get(t))){
+								Atom atom1 = clause1.atoms.get(i);
+								atom1.terms.get(j).domain.clear();
+								atom1.terms.get(j).domain.add(evidence.values.get(t));
+								
+								Atom atom2 = clause2.atoms.get(i);
+								atom2.terms.get(j).domain.remove(evidence.values.get(t));
+								
+								
+								//changed = true;
+							}
+						}
+					}
+				}
+				allSplittedClauses.clear();
+				allSplittedClauses.addAll(splittedClauses);
+			}
+		 	newClauses.addAll(allSplittedClauses);
+		}
+		*/
+	}

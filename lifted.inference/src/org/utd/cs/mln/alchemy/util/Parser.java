@@ -14,8 +14,10 @@ import java.util.Scanner;
 import org.utd.cs.gm.core.LogDouble;
 import org.utd.cs.mln.alchemy.core.Atom;
 import org.utd.cs.mln.alchemy.core.Domain;
+import org.utd.cs.mln.alchemy.core.Evidence;
 import org.utd.cs.mln.alchemy.core.Formula;
 import org.utd.cs.mln.alchemy.core.MLN;
+import org.utd.cs.mln.alchemy.core.PredicateNotFound;
 import org.utd.cs.mln.alchemy.core.PredicateSymbol;
 import org.utd.cs.mln.alchemy.core.Term;
 import org.utd.cs.mln.alchemy.core.WClause;
@@ -334,6 +336,42 @@ public class Parser {
 		predicateDomainMap.put(predicateId, domainIndex);
 		//increment predicateid
 		predicateId++;
+	}
+
+	public ArrayList<Evidence> parseInputEvidenceFile(String filename) throws FileNotFoundException, PredicateNotFound
+	{
+		Scanner scanner = new Scanner(new BufferedReader(new InputStreamReader(new FileInputStream(filename))));
+		ArrayList<Evidence> evidList = new ArrayList<Evidence>();
+		while(scanner.hasNextLine()) {
+			String line = scanner.nextLine().replaceAll("\\s","");
+
+			if(line.isEmpty()) {
+				continue;
+			}
+			
+			evidList.add(parseEvidenceString(line));
+		}
+		scanner.close();
+		return evidList;
+	}
+	private Evidence parseEvidenceString(String line) throws PredicateNotFound{
+		String[] predArr = line.split(REGEX_ESCAPE_CHAR + LEFTPRNTH);
+		String symbolName = predArr[0];
+		boolean truthValue = (symbolName.charAt(0) != '!');
+		if(!truthValue){
+			symbolName = symbolName.substring(1);
+		}
+		String[] termNames = predArr[1].replace(RIGHTPRNTH, "").split(COMMASEPARATOR);
+		ArrayList<Integer> values = new ArrayList<Integer>();
+		for(String term : termNames){
+			values.add(Integer.parseInt(term));
+		}
+		for(PredicateSymbol symbol : mln.symbols){
+			if(symbolName.equals(symbol.symbol)){
+				return new Evidence(MLN.create_new_symbol(symbol),values,truthValue);
+			}
+		}
+		throw new PredicateNotFound("wrong predicate in evidence");
 	}
 
 	public void parseInputMLNFile(String filename) throws FileNotFoundException

@@ -20,6 +20,18 @@ public class WClause {
 		satisfied = (false);
 	}
 	
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		// TODO Auto-generated method stub
+		return super.clone();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		// TODO Auto-generated method stub
+		return super.equals(obj);
+	}
+
 	public boolean valid(){
 		for(int i=0;i<atoms.size();i++){
 			for(int j=0;j<atoms.get(i).terms.size();j++){

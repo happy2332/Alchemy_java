@@ -68,6 +68,8 @@ public class NonSharedLiftedMAP {
 
 		if(print)
 			System.out.println("Time to parse = " + (System.currentTimeMillis() - time) + " ms");
+		//System.out.println("mln is : ");
+		//mln.print(mln.clauses, "MLN...");
 		//System.out.println("x's type : "+mln.clauses.get(0).atoms.get(0).terms.get(0));
 		//System.out.println("y's type : "+mln.clauses.get(0).atoms.get(1).terms.get(0));
 		time = System.currentTimeMillis();
@@ -120,7 +122,7 @@ public class NonSharedLiftedMAP {
 //		lmap.run("student/student_mln_int_100.txt");
 //		lmap.run("segment/segment_mln_int_lifted_100.txt");
 //		lmap.run("smoker/smoker_mln_10.txt");
-		lmap.run("testfiles/test_mln.txt");
+		//lmap.run("testfiles/test_mln.txt");
 //		lmap.run("webkb/webkb_mln_100.txt");
 		
 //		System.out.println("Network Construction time: " + lmap.networkConstructionTime);

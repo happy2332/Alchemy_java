@@ -10,7 +10,9 @@ import java.util.List;
 import org.sat4j.specs.ContradictionException;
 import org.utd.cs.gm.core.LogDouble;
 import org.utd.cs.mln.alchemy.core.Atom;
+import org.utd.cs.mln.alchemy.core.Evidence;
 import org.utd.cs.mln.alchemy.core.MLN;
+import org.utd.cs.mln.alchemy.core.PredicateNotFound;
 import org.utd.cs.mln.alchemy.core.WClause;
 import org.utd.cs.mln.alchemy.util.GrindingMill;
 import org.utd.cs.mln.alchemy.util.Parser;
@@ -57,7 +59,7 @@ public class GroundMaxWalkSat {
 
 	}
 	
-	public  void run(String filename) throws FileNotFoundException {
+	public  void run(String filename) throws FileNotFoundException, PredicateNotFound {
 		long time = System.currentTimeMillis();
 		long startTime = time;
 		
@@ -67,7 +69,24 @@ public class GroundMaxWalkSat {
 		MLN mln = new MLN();
 		Parser parser = new Parser(mln);
 		parser.parseInputMLNFile(filename);
-
+		//System.out.println("mln is : ");
+		//mln.print(mln.clauses, "MLN...");
+		//System.out.println("After normalizing...");
+		//ArrayList<Integer>values1 = new ArrayList<Integer>();
+		//values1.add(0);
+		ArrayList<Evidence> evid_list = parser.parseInputEvidenceFile("smoke/evidence.txt");
+		/*
+		Evidence e1 = new Evidence(mln.clauses.get(0).atoms.get(0).symbol,values1);
+		evid_list.add(e1);
+		ArrayList<Integer>values2 = new ArrayList<Integer>();
+		values2.add(1);
+		//values2.add(2);
+		Evidence e2 = new Evidence(mln.clauses.get(0).atoms.get(0).symbol,values2);
+		evid_list.add(e2);
+		*/
+		mln.convertToNormalForm(mln,evid_list); // added by Happy
+		//System.out.println("mln is : ");
+		//mln.print(mln.clauses, "MLN...");
 		if(print)
 			System.out.println("Time to parse = " + (System.currentTimeMillis() - time) + " ms");
 		
@@ -75,6 +94,8 @@ public class GroundMaxWalkSat {
 		MLN groundMln = GrindingMill.ground(mln);
 		if(print)
 			System.out.println("Time to convert = " + (System.currentTimeMillis() - time) + " ms");
+		//System.out.println("mln is : ");
+		//groundMln.print(groundMln.clauses, "MLN...");
 		//String path = System.getProperty("java.library.path");
 		//System.out.println("Java pah : "+path);
 		time = System.currentTimeMillis();
@@ -130,13 +151,13 @@ public class GroundMaxWalkSat {
 	}
 	
 	
-	public static void main(String[] args) throws IOException, ContradictionException {
+	public static void main(String[] args) throws IOException, ContradictionException, PredicateNotFound {
 		WeightedMaxSatSolver solver = new GurobiWmsSolver();
 		//solver.setTimeLimit(80.0);
 		GroundMaxWalkSat gmws = new GroundMaxWalkSat(solver);
 //		print = false;
 		
-	    gmws.run("smoke/smoke_mln_99.txt");
+	    gmws.run("smoke/smoke_normal.txt");
 		//gmws.run("segment/segment_mln_int_lifted_30.txt");
 //		lmap.run("testfiles/simple_mln1.txt");
 //		lmap.run("testfiles/ground_mln1.txt");

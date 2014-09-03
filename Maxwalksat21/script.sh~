@@ -1,6 +1,0 @@
-rm ../student/student_aistats_99.results
-for i in {10..200..10}
-  do
-     ./maxwalksat -maxtime $i -tries 5000000  < ../student/student_aistats_99.cnf >> ../student/student_aistats_99.results 
-     
- done

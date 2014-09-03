@@ -114,7 +114,8 @@ public class NonSameEquivClass {
 		removeTransitiveClauses(mln);
 		if(print)
 			System.out.println("Time to parse = " + (System.currentTimeMillis() - time) + " ms");
-		
+		System.out.println("MLN is  : ");
+		mln.print(mln.clauses, "printing MLN...");
 		time = System.currentTimeMillis();
 		//System.out.println("Before converting : first clause's first pred's second term's domain size : "+mln.clauses.get(0).atoms.get(0).terms.get(1).domain);
 		MLN nonSameEquivMln = NonSameEquivConverter.convert(mln);
@@ -161,10 +162,10 @@ public class NonSameEquivClass {
 //		print = false;
 		
 //		lmap.run("random/random_4_50_2_10.txt");
-//		lmap.run("student/student_mln_int_100.txt");
+		lmap.run("student/student_mln_29.txt");
 //		lmap.run("segment/segment_mln_int_lifted_100.txt");
 //		lmap.run("smoker/smoker_mln_10.txt");
-		lmap.run("testfiles/test_mln.txt");
+//		lmap.run("testfiles/test_mln.txt");
 //		lmap.run("webkb/webkb_mln_100.txt");
 		
 //		System.out.println("Network Construction time: " + lmap.networkConstructionTime);

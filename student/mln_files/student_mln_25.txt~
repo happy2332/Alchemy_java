@@ -1,5 +1,5 @@
 #domains
-dom1={0, ..., 99}
+dom1={0, ..., 124}
 
 #predicates
 Takes(dom1, dom1)

@@ -15192,3 +15192,1192 @@ Thread count was 4 (of 4 available processors)
 
 Optimal solution found (tolerance 1.00e-04)
 Best objective 4.025000000000e+07, best bound 4.025000000000e+07, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 12:58:31 PM IST
+
+Optimize a model with 60 rows, 95 columns and 170 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 35 rows and 85 columns
+Presolve time: 0.01s
+Presolved: 25 rows, 10 columns, 50 nonzeros
+Variable types: 0 continuous, 10 integer (10 binary)
+
+Root relaxation: cutoff, 6 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0      2050.00000 2054.99795  0.24%     -    0s
+
+Explored 0 nodes (6 simplex iterations) in 0.03 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 01:00:07 PM IST
+
+Optimize a model with 60 rows, 95 columns and 170 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 35 rows and 85 columns
+Presolve time: 0.00s
+Presolved: 25 rows, 10 columns, 50 nonzeros
+Variable types: 0 continuous, 10 integer (10 binary)
+
+Root relaxation: cutoff, 6 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+     0     0     cutoff    0      2050.00000 2054.99795  0.24%     -    0s
+
+Explored 0 nodes (6 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 01:02:54 PM IST
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:02:54 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:02:54 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:02:54 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:02:54 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 01:03:27 PM IST
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:03:28 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:03:28 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:03:28 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:03:28 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 01:04:35 PM IST
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:04:35 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:04:35 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:04:35 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:04:35 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 19 Jun 2014 01:10:57 PM IST
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:10:57 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:10:57 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:10:57 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jun 19 13:10:58 2014
+
+Optimize a model with 700 rows, 775 columns and 2650 nonzeros
+Found heuristic solution: objective 1925
+Presolve removed 75 rows and 75 columns
+Presolve time: 0.01s
+Presolved: 625 rows, 700 columns, 2500 nonzeros
+Variable types: 0 continuous, 700 integer (700 binary)
+
+Root relaxation: objective 2.050000e+03, 37 iterations, 0.00 seconds
+
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+
+*    0     0               0    2050.0000000 2050.00000  0.00%     -    0s
+
+Explored 0 nodes (37 simplex iterations) in 0.01 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 2.050000000000e+03, best bound 2.050000000000e+03, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu 31 Jul 2014 11:07:28 PM IST
+
+Optimize a model with 20300 rows, 30500 columns and 60500 nonzeros
+Found heuristic solution: objective 40700
+Presolve removed 10400 rows and 20500 columns
+Presolve time: 0.20s
+Presolved: 9900 rows, 10000 columns, 29700 nonzeros
+Found heuristic solution: objective 60700.000000
+Variable types: 0 continuous, 10000 integer (10000 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.23 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.070000000000e+04, best bound 6.070000000000e+04, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jul 31 23:07:29 2014
+
+Optimize a model with 20300 rows, 30500 columns and 60500 nonzeros
+Found heuristic solution: objective 40700
+Presolve removed 10400 rows and 20500 columns
+Presolve time: 0.19s
+Presolved: 9900 rows, 10000 columns, 29700 nonzeros
+Found heuristic solution: objective 60700.000000
+Variable types: 0 continuous, 10000 integer (10000 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.20 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.070000000000e+04, best bound 6.070000000000e+04, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jul 31 23:07:29 2014
+
+Optimize a model with 20300 rows, 30500 columns and 60500 nonzeros
+Found heuristic solution: objective 40700
+Presolve removed 10400 rows and 20500 columns
+Presolve time: 0.18s
+Presolved: 9900 rows, 10000 columns, 29700 nonzeros
+Found heuristic solution: objective 60700.000000
+Variable types: 0 continuous, 10000 integer (10000 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.20 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.070000000000e+04, best bound 6.070000000000e+04, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jul 31 23:07:30 2014
+
+Optimize a model with 20300 rows, 30500 columns and 60500 nonzeros
+Found heuristic solution: objective 40700
+Presolve removed 10400 rows and 20500 columns
+Presolve time: 0.19s
+Presolved: 9900 rows, 10000 columns, 29700 nonzeros
+Found heuristic solution: objective 60700.000000
+Variable types: 0 continuous, 10000 integer (10000 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.20 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.070000000000e+04, best bound 6.070000000000e+04, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Thu Jul 31 23:07:30 2014
+
+Optimize a model with 20300 rows, 30500 columns and 60500 nonzeros
+Found heuristic solution: objective 40700
+Presolve removed 10400 rows and 20500 columns
+Presolve time: 0.19s
+Presolved: 9900 rows, 10000 columns, 29700 nonzeros
+Found heuristic solution: objective 60700.000000
+Variable types: 0 continuous, 10000 integer (10000 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.20 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 6.070000000000e+04, best bound 6.070000000000e+04, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 02:18:40 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.05s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.07 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:18:40 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:18:40 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:18:40 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:18:40 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 02:19:38 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:19:38 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:19:38 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:19:38 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:19:38 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 02:22:21 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:22:21 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:22:21 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:22:21 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 14:22:21 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 03:41:28 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:41:28 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:41:28 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:41:28 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:41:28 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 03:45:25 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:45:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:45:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:45:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:45:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun 03 Aug 2014 03:50:48 PM IST
+
+Optimize a model with 27 rows, 66 columns and 75 nonzeros
+Found heuristic solution: objective 81
+Presolve removed 27 rows and 66 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.100000000000e+01, best bound 8.100000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:50:48 2014
+
+Optimize a model with 27 rows, 66 columns and 75 nonzeros
+Found heuristic solution: objective 81
+Presolve removed 27 rows and 66 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.100000000000e+01, best bound 8.100000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:50:48 2014
+
+Optimize a model with 27 rows, 66 columns and 75 nonzeros
+Found heuristic solution: objective 81
+Presolve removed 27 rows and 66 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.100000000000e+01, best bound 8.100000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:50:48 2014
+
+Optimize a model with 27 rows, 66 columns and 75 nonzeros
+Found heuristic solution: objective 81
+Presolve removed 27 rows and 66 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.100000000000e+01, best bound 8.100000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Sun Aug  3 15:50:48 2014
+
+Optimize a model with 27 rows, 66 columns and 75 nonzeros
+Found heuristic solution: objective 81
+Presolve removed 27 rows and 66 columns
+Presolve time: 0.00s
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 1 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 8.100000000000e+01, best bound 8.100000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Mon 04 Aug 2014 03:03:06 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.01s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.04 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Mon Aug  4 15:03:06 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Mon Aug  4 15:03:06 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Mon Aug  4 15:03:06 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Mon Aug  4 15:03:06 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Wed 06 Aug 2014 02:41:24 PM IST
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.02s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.05 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Wed Aug  6 14:41:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Wed Aug  6 14:41:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Wed Aug  6 14:41:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%
+
+Gurobi 5.6.3 (linux64) logging started Wed Aug  6 14:41:25 2014
+
+Optimize a model with 27 rows, 42 columns and 69 nonzeros
+Found heuristic solution: objective 57
+Presolve removed 21 rows and 33 columns
+Presolve time: 0.00s
+Presolved: 6 rows, 9 columns, 18 nonzeros
+Found heuristic solution: objective 75.0000000
+Variable types: 0 continuous, 9 integer (9 binary)
+
+Explored 0 nodes (0 simplex iterations) in 0.00 seconds
+Thread count was 4 (of 4 available processors)
+
+Optimal solution found (tolerance 1.00e-04)
+Best objective 7.500000000000e+01, best bound 7.500000000000e+01, gap 0.0%

@@ -1,0 +1,15 @@
+git init -> creates a new repository for current project in current directory. Creates a .git directory containing all info about this project.
+git add <filename/directory name> -> adds file to this repository. If directory name is given, all files are added recursively. These files added will be in tracked state, and staged.
+** If file given is untracked, this command adds it to tracked status and staged.
+** If file given is tracked, this command gives it staged status.
+
+git status -> tells status of files, whether tracked or tracked and whether staged, modified or commited.
+**Create a .gitignore file to ignore files by git. Can give regex expression.
+
+git diff -> to see difference between unstaged i.e. modified and staged file
+git diff --staged -> to see what will is staged.
+
+git commit ->  commits current staged files. Can add message to editor opened or directly give message by giving -m option and then entering 
+message. Can also give -v option to be verbose about commiting.
+
+git log -p -2 -> shows commit log with diff (-p) for last 2 commits (-2).
