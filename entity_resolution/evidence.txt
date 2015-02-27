@@ -1,0 +1,3 @@
+HasWordAuthor(0,0)
+HasWordTitle(0,1)
+HasWordVenue(1,2)

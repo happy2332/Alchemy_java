@@ -1,6 +1,7 @@
 package org.utd.cs.mln.alchemy.core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -8,16 +9,25 @@ import java.util.Set;
 
 import org.utd.cs.gm.core.LogDouble;
 import org.utd.cs.gm.utility.Pair;
+import org.utd.cs.mln.lmap.LiftedPTP;
+import org.utd.cs.mln.lmap.Node;
+
 
 public class WClause {
 
 	public List<Atom> atoms = new ArrayList<Atom>();
-	public List<Boolean> sign = new ArrayList<Boolean>();
+	public List<Term> terms = new ArrayList<Term>();
+	//public List<HyperCube> hyperCubes = new ArrayList<HyperCube>();
+	//public ArrayList<ArrayList<Integer>> tuples = new ArrayList<ArrayList<Integer>>();
+	public List<Boolean> sign = new ArrayList<Boolean>(); // sign = true : negative, false : positive
 	public LogDouble weight;
 	public boolean satisfied;
+	public Node root = new Node();
+	public ArrayList<Integer> hcCount = new ArrayList<Integer>();
 	
 	public WClause() {
 		satisfied = (false);
+		
 	}
 	
 	@Override
@@ -42,6 +52,11 @@ public class WClause {
 		return true;
 	}
 	
+	public void hcCountUpdate(){
+		for(int phId = 0 ; phId < root.hyperCubesList.size() ; phId++){
+			hcCount.set(phId, root.hyperCubesList.get(phId).size());
+		}
+	}
 	public void print() {
 
 		if(satisfied)
@@ -219,4 +234,45 @@ public class WClause {
 		}
 		return cur_index;
 	}
+	
+	public int findEquivClass(ArrayList<Set<Pair>> equi_class,int cum_index,int cur_index, ArrayList<ArrayList<Boolean>> validPredPos){
+		ArrayList<Term> termList = new ArrayList<Term>();
+		/*
+		for(Atom atom : atoms)
+		{
+			System.out.println("terms size : "+atom.terms.size());
+			for(Term term : atom.terms)
+			{
+				System.out.print("domain size : "+term.domain.size()+", ");
+			}
+			System.out.println();
+		}*/
+		for(int i = 0 ; i < atoms.size() ; i++){
+			for(int j = 0 ; j < atoms.get(i).terms.size() ; j++){
+				Term term = atoms.get(i).terms.get(j);
+				int term_id = termList.indexOf(term);
+				//System.out.println("term id = "+term_id);
+				//System.out.println("cur_index = "+cur_index);
+				if(term_id == -1)
+				{
+					cur_index++;
+					termList.add(term);
+					if(validPredPos.get(atoms.get(i).symbol.id).get(j) == true){
+						Set<Pair> termEquivalenceClass = new HashSet<Pair>();
+						termEquivalenceClass.add(new Pair(atoms.get(i).symbol.id,j));
+						equi_class.add(termEquivalenceClass);
+					}
+				}
+				else{
+					if(validPredPos.get(atoms.get(i).symbol.id).get(j) == true){
+						equi_class.get(term_id+cum_index).add(new Pair(atoms.get(i).symbol.id,j));
+					}
+				}
+				///System.out.println("equi_class becomes : ");
+				///System.out.println(equi_class);
+			}
+		}
+		return cur_index;
+	}
+
 }

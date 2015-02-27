@@ -11,7 +11,9 @@ import java.util.Map;
 import org.sat4j.specs.ContradictionException;
 import org.utd.cs.gm.core.LogDouble;
 import org.utd.cs.mln.alchemy.core.Atom;
+import org.utd.cs.mln.alchemy.core.Evidence;
 import org.utd.cs.mln.alchemy.core.MLN;
+import org.utd.cs.mln.alchemy.core.PredicateNotFound;
 import org.utd.cs.mln.alchemy.core.WClause;
 import org.utd.cs.mln.alchemy.util.Parser;
 import org.utd.cs.mln.alchemy.wms.GurobiWmsSolver;
@@ -100,7 +102,7 @@ public class NonSameEquivClass {
 		//System.out.println("ClausesToRemove : "+clausesToRemove);
 	}
 	
-	public  void run(String filename) throws FileNotFoundException {
+	public  void run(String filename) throws FileNotFoundException, PredicateNotFound  {
 		long time = System.currentTimeMillis();
 		long startTime = time;
 		
@@ -111,13 +113,16 @@ public class NonSameEquivClass {
 		Parser parser = new Parser(mln);
 		parser.parseInputMLNFile(filename);
 		// remove transitive clauses
-		removeTransitiveClauses(mln);
+		//removeTransitiveClauses(mln);
 		if(print)
 			System.out.println("Time to parse = " + (System.currentTimeMillis() - time) + " ms");
 		System.out.println("MLN is  : ");
 		mln.print(mln.clauses, "printing MLN...");
 		time = System.currentTimeMillis();
 		//System.out.println("Before converting : first clause's first pred's second term's domain size : "+mln.clauses.get(0).atoms.get(0).terms.get(1).domain);
+		//ArrayList<Evidence> evid_list = parser.parseInputEvidenceFile("entity_resolution/er-test-eclipse.db");
+		//mln.convertToNormalForm(mln,evid_list); // added by Happy
+		//System.out.println("No. of clauses : "+mln.clauses.size());
 		MLN nonSameEquivMln = NonSameEquivConverter.convert(mln);
 		//System.out.println("second clause's weight : "+nonSameEquivMln.clauses.get(1).weight.getValue());
 		//System.out.println("After converting, no. of clauses : "+nonSameEquivMln.clauses.size());
@@ -154,7 +159,7 @@ public class NonSameEquivClass {
 		
 	}
 	
-	public static void main(String[] args) throws IOException, ContradictionException {
+	public static void main(String[] args) throws IOException, ContradictionException, PredicateNotFound {
 		WeightedMaxSatSolver solver = new GurobiWmsSolver();
 		solver.setTimeLimit(20);
 		
@@ -162,9 +167,9 @@ public class NonSameEquivClass {
 //		print = false;
 		
 //		lmap.run("random/random_4_50_2_10.txt");
-		lmap.run("student/student_mln_29.txt");
+//		lmap.run("student/student_mln_29.txt");
 //		lmap.run("segment/segment_mln_int_lifted_100.txt");
-//		lmap.run("smoker/smoker_mln_10.txt");
+		lmap.run("smoke/smoke_mln_99.txt");
 //		lmap.run("testfiles/test_mln.txt");
 //		lmap.run("webkb/webkb_mln_100.txt");
 		

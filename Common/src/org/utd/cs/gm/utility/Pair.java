@@ -7,6 +7,10 @@ public class Pair {
 		first = f;
 		second = s;
 	}
+	public Pair(Pair oldPredPos) {
+		first = oldPredPos.first;
+		second = oldPredPos.second;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;

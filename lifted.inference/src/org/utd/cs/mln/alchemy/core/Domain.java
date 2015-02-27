@@ -11,4 +11,9 @@ public class Domain {
 		name = name_;
 		values = values_;
 	}
+
+	@Override
+	public String toString() {
+		return "Domain [name=" + name + ", values=" + values + "]";
+	}
 }

@@ -1,0 +1,1 @@
+1. In hyperCubesClauseListHashMap, take key as segment (set<Integer>) instead of hypercube

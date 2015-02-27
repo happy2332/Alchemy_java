@@ -1,0 +1,9 @@
+1. Merge hypercubes of clause along some dimension after making disjoint in decomposer (because segments break and thus we can merge 
+them)
+2. In splitting, If approximate is true, then split the segment according to random number only. Now splitting is occuring on all cases
+i.e. nc0, nc1,...ncCn, but we are choosing only one out of them based on random number. Instead, we can only split on only 1 case
+3. Remove parentMln in binomialSplitterSegment, as done in nonbinomialSplitterSegment
+
+
+********
+Complete copyRoot in MLN

@@ -9,9 +9,9 @@ public class Evidence {
 		this.values = values;
 		this.truthValue = truthValue;
 	}
-	PredicateSymbol symbol;
-	ArrayList<Integer> values;
-	boolean truthValue;
+	public PredicateSymbol symbol;
+	public ArrayList<Integer> values;
+	public boolean truthValue;
 }
 
 

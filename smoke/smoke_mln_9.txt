@@ -1,0 +1,15 @@
+#domains
+dom1={0, ..., 2}
+dom2={0, ..., 2}
+#predicates
+C(dom1,dom1)
+S(dom1,dom1)
+F(dom1,dom1)
+
+#formulas
+( S(x) | F(x,y)) :: 5
+( S(x,y) | C(y,z) | F(z,x)) :: 3
+(S(x,y)) :: 2
+(!C(x,y)) :: 4
+(F(x,y)) :: 2
+

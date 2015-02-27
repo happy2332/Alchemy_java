@@ -7,6 +7,7 @@ public class Atom {
 	public PredicateSymbol symbol;
 	// terms may be shared across atoms
 	public List<Term> terms;
+	public ArrayList<HyperCube> hyperCubes = new ArrayList<HyperCube>();
 
 	// Conditions: terms.size()=symbol.variables.size() and
 	// terms[i].type=symbol.variables[i]
@@ -21,6 +22,7 @@ public class Atom {
 
 	public Atom(Atom atom) {
 		symbol = atom.symbol;
+		terms = new ArrayList<Term>();
 		for (int i = 0; i < atom.terms.size(); i++) {
 			Term tm = new Term(atom.terms.get(i));
 			terms.add(tm);
@@ -97,4 +99,28 @@ public class Atom {
 		System.out.print(")");
 
 	}
-}
+
+	public int hasSingletonSegment(WClause clause) {
+		ArrayList<Integer> clauseTermIds = new ArrayList<Integer>();
+		for(Term term : terms){
+			clauseTermIds.add(clause.terms.indexOf(term));
+		}
+		int predPosition = -1;
+		for(HyperCube hyperCube : clause.hyperCubes){
+			int nonSingletonSegmentTermId = -1;
+			int countNonSingletonSegments = 0;
+			for(Integer termId : clauseTermIds){
+				if(hyperCube.varConstants.get(termId).size() > 1){
+					nonSingletonSegmentTermId = termId;
+					countNonSingletonSegments++;
+				}
+			}
+			if(countNonSingletonSegments <= 1){
+				predPosition = terms.indexOf(clause.terms.get(nonSingletonSegmentTermId));
+				return predPosition;
+			}
+		}
+		return predPosition;	
+	}
+	
+} // Class ends here

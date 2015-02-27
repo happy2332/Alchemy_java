@@ -1,9 +1,9 @@
 #domains
-bib={0, ..., 1}
-author={0, ..., 2}
-title={0, ..., 3}
-venue={0, ..., 4}
-word={0, ..., 5}
+bib={0, ..., 243}
+author={0, ..., 33}
+title={0, ..., 49}
+venue={0, ..., 77}
+word={0, ..., 193}
 
 #predicates
 Author(bib,author)
@@ -18,45 +18,45 @@ HasWordTitle(title, word)
 HasWordVenue(venue, word)
 
 #formulas 
-!SameBib(b1,b2)
-!SameAuthor(a1,a2)
-!SameTitle(t1,t2)
-!SameVenue(v1,v2)
+!SameBib(b1,b2) :: 1
+!SameAuthor(a1,a2) :: 1
+!SameTitle(t1,t2) :: 1
+!SameVenue(v1,v2) :: 1
  
-!SameBib(b1,b2) v !SameBib(b2,b3) v SameBib(b1,b3)
-!SameAuthor(a1,a2) v !SameAuthor(a2,a3) v SameAuthor(a1,a3)
-!SameTitle(t1,t2) v !SameTitle(t2,t3) v SameTitle(t1,t3)
-!SameVenue(v1,v2) v !SameVenue(v2,v3) v SameVenue(v1,v3)
+!SameBib(b1,b2) v !SameBib(b2,b3) | SameBib(b1,b3) :: 2
+!SameAuthor(a1,a2) | !SameAuthor(a2,a3) | SameAuthor(a1,a3) :: 2
+!SameTitle(t1,t2) | !SameTitle(t2,t3) | SameTitle(t1,t3) :: 2
+!SameVenue(v1,v2) | !SameVenue(v2,v3) | SameVenue(v1,v3) :: 2
 
-!Author(bc1,a1) v !Author(bc2,a2) v !SameAuthor(a1,a2) v SameBib(bc1,bc2) 
-!Title(bc1,t1) v !Title(bc2,t2) v !SameTitle(t1,t2) v SameBib(bc1,bc2) 
-!Venue(bc1,v1) v !Venue(bc2,v2) v !SameVenue(v1,v2) v SameBib(bc1,bc2) 
+!Author(bc1,a1) | !Author(bc2,a2) | !SameAuthor(a1,a2) | SameBib(bc1,bc2) :: 2
+!Title(bc1,t1) | !Title(bc2,t2) | !SameTitle(t1,t2) | SameBib(bc1,bc2) :: 2
+!Venue(bc1,v1) | !Venue(bc2,v2) | !SameVenue(v1,v2) | SameBib(bc1,bc2) :: 2
 
-!Author(bc1,a1) v !Author(bc2,a2) v !SameBib(bc1,bc2) v SameAuthor(a1,a2) 
-!Title(bc1,t1) v !Title(bc2,t2) v !SameBib(bc1,bc2) v SameTitle(t1,t2) 
-!Venue(bc1,v1) v !Venue(bc2,v2) v !SameBib(bc1,bc2) v SameVenue(v1,v2) 
+!Author(bc1,a1) | !Author(bc2,a2) | !SameBib(bc1,bc2) | SameAuthor(a1,a2) :: 2 
+!Title(bc1,t1) | !Title(bc2,t2) | !SameBib(bc1,bc2) | SameTitle(t1,t2) :: 2 
+!Venue(bc1,v1) | !Venue(bc2,v2) | !SameBib(bc1,bc2) | SameVenue(v1,v2) :: 2
 
-!HasWordAuthor(a1, +w) v !HasWordAuthor(a2, +w) v SameAuthor(a1, a2)
-HasWordAuthor(a1, +w) v HasWordAuthor(a2, +w) v SameAuthor(a1, a2)
-!HasWordAuthor(a1, +w) v HasWordAuthor(a2, +w) v SameAuthor(a1, a2)
+!HasWordAuthor(a1, +w) | !HasWordAuthor(a2, +w) | SameAuthor(a1, a2) :: 2
+HasWordAuthor(a1, +w) | HasWordAuthor(a2, +w) | SameAuthor(a1, a2) :: 2
+!HasWordAuthor(a1, +w) | HasWordAuthor(a2, +w) | SameAuthor(a1, a2) :: 2
 
-!HasWordTitle(a1, +w) v !HasWordTitle(a2, +w) v SameTitle(a1, a2)
-HasWordTitle(a1, +w) v !HasWordTitle(a2, +w) v SameTitle(a1, a2)
-!HasWordTitle(a1, +w) v HasWordTitle(a2, +w) v SameTitle(a1, a2)
+!HasWordTitle(a1, +w) v !HasWordTitle(a2, +w) v SameTitle(a1, a2) :: 2
+HasWordTitle(a1, +w) v !HasWordTitle(a2, +w) v SameTitle(a1, a2) :: 2
+!HasWordTitle(a1, +w) v HasWordTitle(a2, +w) v SameTitle(a1, a2) :: 2
 
-!HasWordVenue(a1, +w) v !HasWordVenue(a2, +w) v SameVenue(a1, a2)
-HasWordVenue(a1, +w) v !HasWordVenue(a2, +w) v SameVenue(a1, a2)
-!HasWordVenue(a1, +w) v HasWordVenue(a2, +w) v SameVenue(a1, a2)
+!HasWordVenue(a1, +w) v !HasWordVenue(a2, +w) v SameVenue(a1, a2) :: 2
+HasWordVenue(a1, +w) v !HasWordVenue(a2, +w) v SameVenue(a1, a2) :: 2
+!HasWordVenue(a1, +w) v HasWordVenue(a2, +w) v SameVenue(a1, a2) :: 2
 
-!Author(bc1, a1) v !Author(bc2, a2) v !HasWordAuthor(a1, +w) v !HasWordAuthor(a2, +w) v SameBib(bc1, bc2)
-!Author(bc1, a1) v !Author(bc2, a2) v HasWordAuthor(a1, +w) v !HasWordAuthor(a2, +w) v SameBib(bc1, bc2)
-!Author(bc1, a1) v !Author(bc2, a2) v !HasWordAuthor(a1, +w) v HasWordAuthor(a2, +w) v SameBib(bc1, bc2)
+!Author(bc1, a1) v !Author(bc2, a2) v !HasWordAuthor(a1, +w) v !HasWordAuthor(a2, +w) v SameBib(bc1, bc2) :: 2
+!Author(bc1, a1) v !Author(bc2, a2) v HasWordAuthor(a1, +w) v !HasWordAuthor(a2, +w) v SameBib(bc1, bc2) :: 2
+!Author(bc1, a1) v !Author(bc2, a2) v !HasWordAuthor(a1, +w) v HasWordAuthor(a2, +w) v SameBib(bc1, bc2) :: 2
 
-!Title(bc1, t1) v !Title(bc2, t2) v !HasWordTitle(t1, +w) v !HasWordTitle(t2, +w) v SameBib(bc1, bc2)
-!Title(bc1, t1) v !Title(bc2, t2) v HasWordTitle(t1, +w) v !HasWordTitle(t2, +w) v SameBib(bc1, bc2)
-!Title(bc1, t1) v !Title(bc2, t2) v !HasWordTitle(t1, +w) v HasWordTitle(t2, +w) v SameBib(bc1, bc2)
+!Title(bc1, t1) v !Title(bc2, t2) v !HasWordTitle(t1, +w) v !HasWordTitle(t2, +w) v SameBib(bc1, bc2) :: 2
+!Title(bc1, t1) v !Title(bc2, t2) v HasWordTitle(t1, +w) v !HasWordTitle(t2, +w) v SameBib(bc1, bc2) :: 2
+!Title(bc1, t1) v !Title(bc2, t2) v !HasWordTitle(t1, +w) v HasWordTitle(t2, +w) v SameBib(bc1, bc2) :: 2
 
-!Venue(bc1, v1) v !Venue(bc2, v2) v !HasWordVenue(v1, +w) v !HasWordVenue(v2, +w) v SameBib(bc1, bc2)
-!Venue(bc1, v1) v !Venue(bc2, v2) v HasWordVenue(v1, +w) v !HasWordVenue(v2, +w) v SameBib(bc1, bc2)
-!Venue(bc1, v1) v !Venue(bc2, v2) v !HasWordVenue(v1, +w) v HasWordVenue(v2, +w) v SameBib(bc1, bc2)
+!Venue(bc1, v1) v !Venue(bc2, v2) v !HasWordVenue(v1, +w) v !HasWordVenue(v2, +w) v SameBib(bc1, bc2) :: 2
+!Venue(bc1, v1) v !Venue(bc2, v2) v HasWordVenue(v1, +w) v !HasWordVenue(v2, +w) v SameBib(bc1, bc2) :: 2
+!Venue(bc1, v1) v !Venue(bc2, v2) v !HasWordVenue(v1, +w) v HasWordVenue(v2, +w) v SameBib(bc1, bc2) :: 2
 

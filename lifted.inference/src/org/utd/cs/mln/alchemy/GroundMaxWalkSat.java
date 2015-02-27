@@ -74,7 +74,7 @@ public class GroundMaxWalkSat {
 		//System.out.println("After normalizing...");
 		//ArrayList<Integer>values1 = new ArrayList<Integer>();
 		//values1.add(0);
-		ArrayList<Evidence> evid_list = parser.parseInputEvidenceFile("smoke/evidence.txt");
+		ArrayList<Evidence> evid_list = parser.parseInputEvidenceFile("entity_resolution/er-test-eclipse.db");
 		/*
 		Evidence e1 = new Evidence(mln.clauses.get(0).atoms.get(0).symbol,values1);
 		evid_list.add(e1);
@@ -85,6 +85,7 @@ public class GroundMaxWalkSat {
 		evid_list.add(e2);
 		*/
 		mln.convertToNormalForm(mln,evid_list); // added by Happy
+		System.out.println("No. of clauses : "+mln.clauses.size());
 		//System.out.println("mln is : ");
 		//mln.print(mln.clauses, "MLN...");
 		if(print)

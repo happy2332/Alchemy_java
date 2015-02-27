@@ -142,18 +142,32 @@ public class LogDouble implements Comparable<LogDouble>, Serializable, Cloneable
     }
 
     @Override
-    public boolean equals(Object o) {
-        if(o instanceof LogDouble){
-            
-            LogDouble t = (LogDouble) o;
-            
-            if(isZero)
-                return isZero == t.isZero;
-            
-            return value == t.value;
-        }
-        return false;
-    }
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (isZero ? 1231 : 1237);
+		long temp;
+		temp = Double.doubleToLongBits(value);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LogDouble other = (LogDouble) obj;
+		if (isZero != other.isZero)
+			return false;
+		if (Double.doubleToLongBits(value) != Double
+				.doubleToLongBits(other.value))
+			return false;
+		return true;
+	}
     
     public static LogDouble max(LogDouble d1, LogDouble d2) {
     	if(d1.compareTo(d2) > 0)

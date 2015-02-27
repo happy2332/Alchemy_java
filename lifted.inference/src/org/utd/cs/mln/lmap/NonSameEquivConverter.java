@@ -115,14 +115,14 @@ public class NonSameEquivConverter {
 			cum_index = cur_index = clause.findEquivClass(equiClass,cum_index,cur_index,varIndexToClauseIndex,clause_index,finalTermsToGround, varIndexToDomainSize);
 			clause_index++;
 		}
-		/*
+		
 		for(Set<Pair> s : equiClass){
 			System.out.print("[");
 			for(Pair p : s){
 				System.out.print(p+",");
 			}
 			System.out.println("]");
-		}*/
+		}
 		boolean adj_matrix[][] = new boolean[cur_index][cur_index];
 		//set all to 0
 		for(int i = 0 ; i < cur_index ; i++)
@@ -204,7 +204,123 @@ public class NonSameEquivConverter {
 		*/
 		return final_adj_matrix;
 	}
-	
+
+	public static void findEquivalenceClasses(MLN mln, ArrayList<Set<Pair>> transitiveClosureEquiClass)
+	{
+		ArrayList<Set<Pair>> equiClass = new ArrayList<Set<Pair>>();
+		int cum_index = 0, cur_index = 0;
+		for (WClause clause : mln.clauses) {
+			cum_index = cur_index = clause.findEquivClass(equiClass,cum_index,cur_index,mln.validPredPos);
+		}
+		/*//
+		for(Set<Pair> s : equiClass){
+			System.out.print("[");
+			for(Pair p : s){
+				System.out.print(p+",");
+			}
+			System.out.println("]");
+		}*///
+		boolean adj_matrix[][] = new boolean[cur_index][cur_index];
+		//set all to 0
+		for(int i = 0 ; i < cur_index ; i++)
+		{
+			for(int j = 0 ; j < cur_index ; j++)
+			{
+				adj_matrix[i][j] = false;
+			}
+		}
+		
+		for(int i = 0 ; i < cur_index - 1 ; i++)
+		{
+			for(int j = i+1 ; j < cur_index ; j++)
+			{
+				for(Pair p0 : equiClass.get(i))
+				{
+					for(Pair p1 : equiClass.get(j))
+					{
+						if(p0.equals(p1))
+						{
+							adj_matrix[i][j] = true;
+							adj_matrix[j][i] = true;
+							break;
+						}
+					}
+				}
+			}
+		}
+		
+		// 	print adj matrix
+		/*
+		System.out.println("Initial adj matrix : ");
+		for(int i = 0 ; i < cur_index ; i++)
+		{
+			System.out.print("[");
+			for(int j = 0 ; j < cur_index ; j++)
+			{
+				System.out.print(adj_matrix[i][j]+",");
+			}
+			System.out.println("]");
+		}
+		*/
+		boolean final_adj_matrix[][] = new boolean[cur_index][cur_index];
+		boolean vertexSeen[] = new boolean[cur_index];
+		for(int i = 0 ; i < cur_index ; i++)
+		{
+			if(equiClass.get(i).isEmpty())
+			{
+				vertexSeen[i] = true;
+				continue;
+			}
+			if(!vertexSeen[i])
+			{
+				boolean mark[] = BFS(adj_matrix,cur_index,i);
+				mark[i] = true;
+				final_adj_matrix[i] = mark.clone();
+				for(int j = i+1 ; j < cur_index ; j++)
+				{
+					if(mark[j] == true)
+					{
+						vertexSeen[j] = true;
+						final_adj_matrix[j] = mark.clone();
+					}
+				}
+			}
+		}
+		 // print adj matrix
+		/*//
+		System.out.println("adj matrix : ");
+		for(int i = 0 ; i < cur_index ; i++)
+		{
+			System.out.print("[");
+			for(int j = 0 ; j < cur_index ; j++)
+			{
+				System.out.print(final_adj_matrix[i][j]+",");
+			}
+			System.out.println("]");
+		}*///
+		
+		// print equiClass
+		/*//
+		System.out.println("Print equiClass");
+		for(int i = 0 ; i < cur_index ; i++){
+			System.out.println("equivalence class of variable " + i + " : " + equiClass.get(i));
+		}*///
+		vertexSeen = new boolean[cur_index];
+		for(int i = 0 ; i < cur_index ; i++){
+			if(!vertexSeen[i]){
+				transitiveClosureEquiClass.add(new HashSet<Pair>());
+				int transitiveClosureLastIndex = transitiveClosureEquiClass.size() - 1;
+				for(int j = 0 ; j < cur_index ; j++){
+					if(final_adj_matrix[i][j]==true){
+						vertexSeen[j] = true;
+						transitiveClosureEquiClass.get(transitiveClosureLastIndex).addAll(equiClass.get(j));
+						///System.out.println("transitive EQ class becomes : " + transitiveClosureEquiClass);
+					}
+				}
+			}
+		}
+	}
+
 	public static List<List<Integer>> findTermsToGround(MLN mln, boolean [][]final_adj_matrix, ArrayList<Set<Pair>> equiClass, List<Integer>varIndexToClauseIndex)
 	{
 		int cur_index = varIndexToClauseIndex.size();
@@ -430,9 +546,9 @@ public class NonSameEquivConverter {
 				{
 					if(!ec.clauseIndices.contains(i))
 					{
-						System.out.println("ec = "+ec+", i = "+i+" weight = "+mln.clauses.get(i).weight.getValue());
+						//System.out.println("ec = "+ec+", i = "+i+" weight = "+mln.clauses.get(i).weight.getValue());
 						mln.clauses.get(i).weight = mln.clauses.get(i).weight.power((double)1/ec.domainSize);
-						System.out.println("ec = "+ec+", i = "+i+" weight = "+mln.clauses.get(i).weight.getValue());
+						//System.out.println("ec = "+ec+", i = "+i+" weight = "+mln.clauses.get(i).weight.getValue());
 					}
 				}
 			}
@@ -456,6 +572,7 @@ public class NonSameEquivConverter {
 		for(int i = 0 ; i < varIndexToClauseIndex.size() ; i++)
 			varToEquivalenceClassIndex.add(0);
 		//ArrayList<Boolean> isEquivalentClassSingle = new ArrayList<Boolean>();
+		/*
 		System.out.println("adj matrix : ");
 		for(int i = 0 ; i < adj_matrix.length ; i++)
 		{
@@ -466,13 +583,61 @@ public class NonSameEquivConverter {
 			}
 			System.out.println("]");
 		}
+		*/
 		ArrayList<EquivalenceClass> equivalence_classes = find_equivalence_classes(adj_matrix, varIndexToClauseIndex, varIndexToDomainSize, varToEquivalenceClassIndex);
 		
 		// print equivalent classes 
 		System.out.println("equivalence classes : "+equivalence_classes);
 		// reduce to sub network
+		ArrayList<Set<Pair>>varIndexToPredPosIndex = new ArrayList<Set<Pair>>();
+		int termCountTillPrevClause = 0;
+		for(WClause c : mln.clauses)
+		{
+			ArrayList<Term> termsSeen = new ArrayList<Term>();
+			for(Atom a : c.atoms)
+			{
+				int predId = a.symbol.id;
+				for(int t_index = 0 ; t_index < a.terms.size() ; t_index++)
+				{
+					Term t = a.terms.get(t_index);
+					int indexOfTerm = termsSeen.indexOf(t);
+					if(indexOfTerm != -1)
+					{
+						varIndexToPredPosIndex.get(termCountTillPrevClause + indexOfTerm).add(new Pair(predId,t_index));
+					}
+					else
+					{
+						varIndexToPredPosIndex.add(new HashSet<Pair>());
+						int numVars = varIndexToPredPosIndex.size();
+						varIndexToPredPosIndex.get(numVars-1).add(new Pair(predId,t_index));
+						termsSeen.add(t);
+					}
+				}
+			}
+			System.out.println(varIndexToPredPosIndex);
+			termCountTillPrevClause = varIndexToPredPosIndex.size();
+		}
+		//Printing varIndexToPredPosIndex
+		//System.out.println(varIndexToPredPosIndex);
+		ArrayList<Set<Pair>> predEquivalenceClass = new ArrayList<Set<Pair>>();
+		for(EquivalenceClass e : equivalence_classes)
+		{
+			Set<Pair> s = new HashSet<Pair>();
+			predEquivalenceClass.add(s);
+			int set_index = predEquivalenceClass.size()-1;
+			for(int v : e.varIndices)
+			{
+				for(Pair p : varIndexToPredPosIndex.get(v))
+				{
+					predEquivalenceClass.get(set_index).add(p);
+					//System.out.println(predEquivalenceClass.get(set_index).size());
+				}
+			}
+		}
+		//Printing predEquivalenceClass
+		System.out.println(predEquivalenceClass);
 		reduceToSubNetwork(mln, equivalence_classes);
-		System.out.println("second clause's weight : "+mln.clauses.get(1).weight.getValue());
+		//System.out.println("second clause's weight : "+mln.clauses.get(1).weight.getValue());
 		finalTermsToGround = findTermsToGround(mln, adj_matrix, equiClass, varIndexToClauseIndex);
 		/*
 		while(true)
@@ -492,15 +657,16 @@ public class NonSameEquivConverter {
 		}
 		// added by Happy
 		*/
-		System.out.println("Printing finalTermsToGround sent to grinding mill");
+		//System.out.println("Printing finalTermsToGround sent to grinding mill");
+		/*
 		for(int i = 0 ; i < finalTermsToGround.size() ; i++)
 		{
 			System.out.println("predId : "+ i +", positions : "+finalTermsToGround.get(i));
-		}
+		}*/
 		//keyScanner.next();
 		MLN nonSameEquivMln = GrindingMill.ground(mln, finalTermsToGround);
 		nonSameEquivMln.numSubNetworks = mln.numSubNetworks;
-		System.out.println("second clause's weight : "+nonSameEquivMln.clauses.get(1).weight.getValue());
+		//System.out.println("second clause's weight : "+nonSameEquivMln.clauses.get(1).weight.getValue());
 		System.out.println("In new MLN, no. of clauses : "+nonSameEquivMln.clauses.size());
 		System.out.println("In new MLN, no of predicates : "+nonSameEquivMln.getMaxPredicateId());
 		/*

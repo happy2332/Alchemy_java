@@ -54,10 +54,12 @@ public class Parser {
 	private List<Domain> domainList = new ArrayList<Domain>();
 
 	//map key:predicate Id, value:for each of its terms, Index into the domainList List
-	private Map<Integer,List<Integer>> predicateDomainMap = new HashMap<Integer, List<Integer>>();
+	private Map<Integer,ArrayList<Integer>> predicateDomainMap = new HashMap<Integer, ArrayList<Integer>>();
 
 	public Parser(MLN mln_) {
 		mln = mln_;
+		mln_.domainList = domainList;
+		mln_.predicateDomainMap = predicateDomainMap;
 		predicateId = 0;
 	}
 
@@ -150,7 +152,7 @@ public class Parser {
 
 			int endpos = atomStrings[i].indexOf(RIGHTPRNTH);
 			String termsString = atomStrings[i].substring(startpos+1, endpos);
-			System.out.println("termsString = "+termsString);
+			//System.out.println("termsString = "+termsString);
 			String[] terms = termsString.split(COMMASEPARATOR);
 			sTermsList.add(new ArrayList<String>(Arrays.asList(terms)));
 
@@ -333,7 +335,7 @@ public class Parser {
 			}
 			domainIndex.add(matchingIndex);
 		}
-		predicateDomainMap.put(predicateId, domainIndex);
+		predicateDomainMap.put(predicateId, (ArrayList<Integer>) domainIndex);
 		//increment predicateid
 		predicateId++;
 	}
